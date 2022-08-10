@@ -46,13 +46,13 @@ class Tasks(CoreSysAttributes):
     async def load(self):
         """Add Tasks to scheduler."""
         # Update
-        self.sys_scheduler.register_task(self._update_addons, RUN_UPDATE_ADDONS)
-        self.sys_scheduler.register_task(self._update_supervisor, RUN_UPDATE_SUPERVISOR)
-        self.sys_scheduler.register_task(self._update_cli, RUN_UPDATE_CLI)
-        self.sys_scheduler.register_task(self._update_dns, RUN_UPDATE_DNS)
-        self.sys_scheduler.register_task(self._update_audio, RUN_UPDATE_AUDIO)
-        self.sys_scheduler.register_task(self._update_multicast, RUN_UPDATE_MULTICAST)
-        self.sys_scheduler.register_task(self._update_observer, RUN_UPDATE_OBSERVER)
+        # self.sys_scheduler.register_task(self._update_addons, RUN_UPDATE_ADDONS)
+        # self.sys_scheduler.register_task(self._update_supervisor, RUN_UPDATE_SUPERVISOR)
+        # self.sys_scheduler.register_task(self._update_cli, RUN_UPDATE_CLI)
+        # self.sys_scheduler.register_task(self._update_dns, RUN_UPDATE_DNS)
+        # self.sys_scheduler.register_task(self._update_audio, RUN_UPDATE_AUDIO)
+        # self.sys_scheduler.register_task(self._update_multicast, RUN_UPDATE_MULTICAST)
+        # self.sys_scheduler.register_task(self._update_observer, RUN_UPDATE_OBSERVER)
 
         # Reload
         self.sys_scheduler.register_task(self.sys_store.reload, RUN_RELOAD_ADDONS)
