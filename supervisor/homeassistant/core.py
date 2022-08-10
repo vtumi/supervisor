@@ -6,6 +6,7 @@ import re
 import secrets
 import shutil
 from typing import Awaitable, Optional
+import os
 
 import attr
 from awesomeversion import AwesomeVersion
@@ -280,7 +281,7 @@ class HomeAssistantCore(CoreSysAttributes):
     async def _start(self) -> None:
         """Start Home Assistant Docker & wait."""
         # Create new API token
-        self.sys_homeassistant.supervisor_token = secrets.token_hex(56)
+        self.sys_homeassistant.supervisor_token = os.environ.get("SUPERVISOR_TOKEN", secrets.token_hex(56))
         self.sys_homeassistant.save_data()
 
         # Write audio settings
