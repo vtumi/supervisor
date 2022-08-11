@@ -1,5 +1,4 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/amd64-base-python:3.9-alpine3.14
 
 ENV \
     S6_SERVICES_GRACETIME=10000 \
