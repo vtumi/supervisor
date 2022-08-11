@@ -2,6 +2,7 @@
 
 ## First private cloud solution for home automation
 
+
 Home Assistant (former Hass.io) is a container-based system for managing your
 Home Assistant Core installation and related applications. The system is
 controlled via Home Assistant which communicates with the Supervisor. The
