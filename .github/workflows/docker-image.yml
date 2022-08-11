@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build supervisor
+        uses: home-assistant/builder@master
+        with:
+          args: |
+            --all \
+            --docker-hub-check \
+            --target . \
+            --generic
+            --docker-hub tumi
